@@ -6,6 +6,7 @@ import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { IconChessQueen } from '@tabler/icons-react';
 import { ModeToggle } from '../ui/mode-toggle';
+import { Button } from '../ui/button';
 
 
 export default function Navbar() {
@@ -54,23 +55,23 @@ export default function Navbar() {
                             <div className="flex size-10 items-center justify-center rounded-full bg-secondary text-primary">
                                 <IconChessQueen className="size-6 text-primary" />
                             </div>
-                            <span className="bg-gradient-to-r from-primary to-primary/80 dark:from-primary dark:to-primary/60 bg-clip-text text-xl font-bold text-transparent">
+                            <span className="bg-gradient-to-r from-primary to-primary/80 dark:from-primary dark:to-primary/60 bg-clip-text text-xl font-bold font-sans text-transparent">
                                 QGambit
                             </span>
                         </Link>
                     </motion.div>
 
-                    <div className="flex items-center space-x-4"> 
-                        <ModeToggle /> 
+                    <div className="flex items-center space-x-4">
+                        <ModeToggle />
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <Link
-                                prefetch={false}
-                                href="/game"
-                                className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-b from-secondary to-secondary/60 px-4 py-1.5 font-medium transition-all duration-200 hover:shadow-lg"
-                            >
-                                <span>Get Started</span>
-                                <ArrowRight className="h-4 w-4" />
-                            </Link>
+                            <Button variant="default" asChild>
+                                <Link
+                                    prefetch={false}
+                                    href="/game">
+                                    <span>Get Started</span>
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            </Button>
                         </motion.div>
                     </div>
 
